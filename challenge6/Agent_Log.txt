@@ -1,0 +1,50 @@
+PS C:\Users\Gerald Vasend\workshop\challenge6> python .\deploy_and_test.py
+--- RUNNING LOCAL TEST TURN ---
+C:\Users\Gerald Vasend\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\vertexai\preview\reasoning_engines\templates\adk.py:872: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  self._tmpl_attrs["credential_service"] = InMemoryCredentialService()
+C:\Users\Gerald Vasend\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\google\adk\auth\credential_service\in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+C:\Users\Gerald Vasend\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\google\adk\tools\function_tool.py:95: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  build_function_declaration(
+INFO:google_genai._api_client:The project/location from the environment variables will take precedence over the API key from the environment variables.
+INFO:google_adk.google.adk.models.google_llm:Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+INFO:google_adk.google.adk.models.google_llm:Response received from the model.
+{'model_version': 'gemini-2.5-flash', 'content': {'parts': [{'function_call': {'id': 'adk-d9768446-a212-43b2-96cf-048c10f1c76d', 'args': {'agent_name': 'fema_routing_agent'}, 'name': 'transfer_to_agent'}, 'thought_signature': 'CpUCAY89a1-d7RAiRNq4k7eDo7vl4qGAdetzUAii4WuSdqrht9-yGuy1rsvfESAse5F6kuslA_WDrAMCoMu_AT2Bajl0WVb6HmL6gJr01ebCTyBKbYq7CLkBTq-i8OmRSieBsd3qfl6psxlF3Mkmpi8DLJ5q6G2t9FQPbohrBa48kwu7A3-uKztLiBFRAwmfakSzXqWmIgz7nmZGI8kG7RzOyTFfXARMvR7ptzJBtqaeY5FSoQP5HIMWZHIZum_r4bcnOnZrQCF2KlPddKQrEKti9Jf2Ddc8CPsqYGZ9egxLJSAEUj6OOO7jaCWy65_n6MxwqDgeiHvtXnaiazAen3EP2iaqa2zNLR65Z8sfmecjbWRMPLe1WA=='}], 'role': 'model'}, 'finish_reason': 'STOP', 'usage_metadata': {'candidates_token_count': 14, 'candidates_tokens_details': [{'modality': 'TEXT', 'token_count': 14}], 'prompt_token_count': 364, 'prompt_tokens_details': [{'modality': 'TEXT', 'token_count': 364}], 'thoughts_token_count': 52, 'total_token_count': 430, 'traffic_type': 'ON_DEMAND'}, 'avg_logprobs': -0.5714879717145648, 'invocation_id': 'e-fe1ef28d-3c16-406e-b4a7-21be9ad0a146', 'author': 'ReadyNow_Root', 'actions': {'state_delta': {}, 'artifact_delta': {}, 'requested_auth_configs': {}, 'requested_tool_confirmations': {}}, 'node_info': {'path': 'ReadyNow_Root@1'}, 'long_running_tool_ids': [], 'id': 'd13e5c62-2b52-4cfd-9a00-66e39432139f', 'timestamp': 1782497490.2329566}
+{'content': {'parts': [{'function_response': {'id': 'adk-d9768446-a212-43b2-96cf-048c10f1c76d', 'name': 'transfer_to_agent', 'response': {'result': None}}}], 'role': 'user'}, 'invocation_id': 'e-fe1ef28d-3c16-406e-b4a7-21be9ad0a146', 'author': 'ReadyNow_Root', 'actions': {'state_delta': {}, 'artifact_delta': {}, 'transfer_to_agent': 'fema_routing_agent', 'requested_auth_configs': {}, 'requested_tool_confirmations': {}}, 'node_info': {'path': 'ReadyNow_Root@1'}, 'id': '8429efcf-6fbf-484f-9654-8938eee8dc31', 'timestamp': 1782497493.8302703}
+INFO:google_genai._api_client:The project/location from the environment variables will take precedence over the API key from the environment variables.
+INFO:google_adk.google.adk.models.google_llm:Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+INFO:google_adk.google.adk.models.google_llm:Response received from the model.
+{'model_version': 'gemini-2.5-flash', 'content': {'parts': [{'function_call': {'id': 'adk-1a81f323-6266-40ff-905f-51213cc5f17c', 'args': {'location': 'Miami, FL'}, 'name': 'get_evacuation_routes'}, 'thought_signature': 'CqUDAY89a18Rzu3mi1CfHKwnsmeCVeoMVrO4vCaTn4mCjn0uy_hcDIA_XxIT_AGj4IWutJWunQBdv3nKXpKDi3Jafxf4rDrKSX4gnUfDdJKZxcR-ssXbxgCYG1kTLU1REpXrvc-dRjBsXf1ZyvBQz1HWOIvd_DbDmIsI5b1hOBUymzvxeKjD1dEB905Y3DMBvrDGLKqAic7vSRVVO26g9O2ZzDrtrlEziagri0AOoyGwHiHaNBLszIKT3MDICVNN48e-eYpSYZ_0yoioS-9ICG-9AvDnRsHfP8bfNkEgUcV8zAMlas7tvRFi_Hj8UA9p-MxckyqWkdu9E1W1uCvWGAS28jzTa3nlEBYF4wHdX3jmhQGsXQwt9H6yk-vVqxZ3LnVw3utvqcRFz18AHIGPPxXpg3ghQw5bKKFeWYkLqb8AOoF7k1TBMN2tzXeWH36ZhPT-ZPXKSluj-oHgfVw-yE4xGlL3GOhDYuzvrhVMNtvAcykIHe1ZgvsvSAK20lJk7rBTf7F-NzYnX3FxGgitoyGKHdQ7IQUY567o2ZQ3f2TrnxnwEn2msg=='}], 'role': 'model'}, 'finish_reason': 'STOP', 'usage_metadata': {'candidates_token_count': 10, 'candidates_tokens_details': [{'modality': 'TEXT', 'token_count': 10}], 'prompt_token_count': 442, 'prompt_tokens_details': [{'modality': 'TEXT', 'token_count': 442}], 'thoughts_token_count': 94, 'total_token_count': 546, 'traffic_type': 'ON_DEMAND'}, 'avg_logprobs': -1.9557075500488281, 'invocation_id': 'e-fe1ef28d-3c16-406e-b4a7-21be9ad0a146', 'author': 'fema_routing_agent', 'actions': {'state_delta': {}, 'artifact_delta': {}, 'requested_auth_configs': {}, 'requested_tool_confirmations': {}}, 'node_info': {'path': 'ReadyNow_Root@1/fema_routing_agent@1'}, 'long_running_tool_ids': [], 'id': '56e1f514-c09b-4a50-a0ac-66c69de2270f', 'timestamp': 1782497493.8392375}
+{'content': {'parts': [{'function_response': {'id': 'adk-1a81f323-6266-40ff-905f-51213cc5f17c', 'name': 'get_evacuation_routes', 'response': {'result': 'Official FEMA Evacuation Notice for Miami, FL: Use main highway corridors northbound. Avoid low-lying coastal bypasses.'}}}], 'role': 'user'}, 'invocation_id': 'e-fe1ef28d-3c16-406e-b4a7-21be9ad0a146', 'author': 'fema_routing_agent', 'actions': {'state_delta': {}, 'artifact_delta': {}, 'requested_auth_configs': {}, 'requested_tool_confirmations': {}}, 'node_info': {'path': 'ReadyNow_Root@1/fema_routing_agent@1'}, 'id': '40e10fcc-3dd8-4e7d-acac-2134d07afbb3', 'timestamp': 1782497497.5282328}
+INFO:google_genai._api_client:The project/location from the environment variables will take precedence over the API key from the environment variables.
+INFO:google_adk.google.adk.models.google_llm:Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+INFO:google_adk.google.adk.models.google_llm:Response received from the model.
+{'model_version': 'gemini-2.5-flash', 'content': {'parts': [{'text': 'Official FEMA Evacuation Notice for Miami, FL: Use main highway corridors northbound. Avoid low-lying coastal bypasses.'}], 'role': 'model'}, 'finish_reason': 'STOP', 'usage_metadata': {'candidates_token_count': 24, 'candidates_tokens_details': [{'modality': 'TEXT', 'token_count': 24}], 'prompt_token_count': 577, 'prompt_tokens_details': [{'modality': 'TEXT', 'token_count': 577}], 'total_token_count': 601, 'traffic_type': 'ON_DEMAND'}, 'avg_logprobs': -0.028770796954631805, 'invocation_id': 'e-fe1ef28d-3c16-406e-b4a7-21be9ad0a146', 'author': 'fema_routing_agent', 'actions': {'state_delta': {}, 'artifact_delta': {}, 'requested_auth_configs': {}, 'requested_tool_confirmations': {}}, 'node_info': {'path': 'ReadyNow_Root@1/fema_routing_agent@1'}, 'id': '4160f79c-063a-40cd-b5a2-133085a05c4b', 'timestamp': 1782497497.536445}
+
+--- DEPLOYING TO VERTEX AI AGENT ENGINE ---
+Identified the following requirements: {'pydantic': '2.13.4', 'google-cloud-aiplatform': '1.158.0', 'cloudpickle': '3.1.2'}
+INFO:vertexai.agent_engines:Identified the following requirements: {'pydantic': '2.13.4', 'google-cloud-aiplatform': '1.158.0', 'cloudpickle': '3.1.2'}
+The following requirements are missing: {'pydantic', 'cloudpickle'}
+WARNING:vertexai.agent_engines:The following requirements are missing: {'pydantic', 'cloudpickle'}
+The following requirements are appended: {'cloudpickle==3.1.2', 'pydantic==2.13.4'}
+INFO:vertexai.agent_engines:The following requirements are appended: {'cloudpickle==3.1.2', 'pydantic==2.13.4'}
+The final list of requirements: ['google-cloud-aiplatform[agent_engines,adk]', 'cloudpickle==3.1.2', 'pydantic==2.13.4']
+INFO:vertexai.agent_engines:The final list of requirements: ['google-cloud-aiplatform[agent_engines,adk]', 'cloudpickle==3.1.2', 'pydantic==2.13.4']
+Using bucket gvasend-temp-bucket
+INFO:vertexai.agent_engines:Using bucket gvasend-temp-bucket
+Wrote to gs://gvasend-temp-bucket/agent_engine/agent_engine.pkl
+INFO:vertexai.agent_engines:Wrote to gs://gvasend-temp-bucket/agent_engine/agent_engine.pkl
+Writing to gs://gvasend-temp-bucket/agent_engine/requirements.txt
+INFO:vertexai.agent_engines:Writing to gs://gvasend-temp-bucket/agent_engine/requirements.txt
+Creating in-memory tarfile of extra_packages
+INFO:vertexai.agent_engines:Creating in-memory tarfile of extra_packages
+Writing to gs://gvasend-temp-bucket/agent_engine/dependencies.tar.gz
+INFO:vertexai.agent_engines:Writing to gs://gvasend-temp-bucket/agent_engine/dependencies.tar.gz
+Bidi stream API mode is not supported yet in Vertex SDK, please use the GenAI SDK instead. Skipping method bidi_stream_query.
+WARNING:vertexai.agent_engines:Bidi stream API mode is not supported yet in Vertex SDK, please use the GenAI SDK instead. Skipping method bidi_stream_query.
+Creating AgentEngine
+INFO:vertexai.agent_engines:Creating AgentEngine
+Create AgentEngine backing LRO: projects/1020898030066/locations/us-central1/reasoningEngines/3209367239094435840/operations/2542443471831040000
+INFO:vertexai.agent_engines:Create AgentEngine backing LRO: projects/1020898030066/locations/us-central1/reasoningEngines/3209367239094435840/operations/2542443471831040000
+View progress and logs at https://console.cloud.google.com/logs/query?project=gen-lang-client-0922909049
+INFO:vertexai.agent_engines:View progress and logs at https://console.cloud.google.com/logs/query?project=gen-lang-client-0922909049
